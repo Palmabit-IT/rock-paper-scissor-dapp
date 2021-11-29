@@ -10,16 +10,21 @@ This tutorial walks through the creation of a simple decentralized application. 
 npm run compile
 ```
 
+## Run
 
-
-## Run on Algorand
+### Algorand
 
 ```
 npm start
 ```
+### Ethereum
+
+```
+npm run start-eth
+```
 
 
-## Background
+## Background
 
 # **Background**
 
