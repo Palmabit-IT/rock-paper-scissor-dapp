@@ -6,16 +6,8 @@ This tutorial walks through the creation of a simple decentralized application. 
 
 ## Compile
 
-in your zshrc:
-
 ```
-alias reach = PATH_TO_REACH_DIR
-```
-
-then
-
-```
-reach compile
+npm run compile
 ```
 
 
@@ -23,7 +15,7 @@ reach compile
 ## Run on Algorand
 
 ```
-REACH_CONNECTOR_MODE=ALGO DEBUG=1 reach run
+npm start
 ```
 
 
