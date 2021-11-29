@@ -9,6 +9,7 @@
     "lint": "eslint --ignore-path .gitignore --ext .mjs .",
     "index": "node --experimental-modules --unhandled-rejections=strict index.mjs",
     "compile": "./reach compile",
-    "start": "REACH_CONNECTOR_MODE=ALGO DEBUG=1 ./reach run"
+    "start": "REACH_CONNECTOR_MODE=ALGO DEBUG=1 ./reach run",
+    "start-eth": "REACH_CONNECTOR_MODE=ETH DEBUG=1 ./reach run"
   }
 }

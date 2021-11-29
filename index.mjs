@@ -9,6 +9,11 @@ const stdlib = loadStdlib(process.env);
   const accAlice = await stdlib.newTestAccount(startingBalance);
   const accBob = await stdlib.newTestAccount(startingBalance);
 
+  const fmt = (x) => stdlib.formatCurrency(x, 8);
+  const getBalance = async (who) => fmt(await stdlib.balanceOf(who));
+  const beforeAlice = await getBalance(accAlice);
+  const beforeBob = await getBalance(accBob);
+
   const ctcAlice = accAlice.contract(backend);
   const ctcBob = accBob.contract(backend, ctcAlice.getInfo());
 
@@ -27,14 +32,22 @@ const stdlib = loadStdlib(process.env);
   });
 
   await Promise.all([
-    backend.Alice(ctcAlice, {
-      // implement Alice's interact object here
-      ...Player('Alice')
+    ctcAlice.p.Alice({
+      ...Player('Alice'),
+      wager: stdlib.parseCurrency(5),
     }),
-    backend.Bob(ctcBob, {
-      // implement Bob's interact object here
+    ctcBob.p.Bob({
       ...Player('Bob'),
-    }),
-  ]);
-})(); // <-- Don't forget these!
+      acceptWager: (amt) => {
+        console.log(`Bob accepts the wager of ${fmt(amt)}.`);
+      },
+    })
+  ])
+
+  const afterAlice = await getBalance(accAlice);
+  const afterBob = await getBalance(accBob);
+
+  console.log(`Alice went from ${beforeAlice} to ${afterAlice}.`);
+  console.log(`Bob went from ${beforeBob} to ${afterBob}.`);
+})(); 
 
