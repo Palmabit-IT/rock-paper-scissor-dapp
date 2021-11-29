@@ -7,6 +7,7 @@
   "license": "Apache-2.0",
   "scripts": {
     "lint": "eslint --ignore-path .gitignore --ext .mjs .",
-    "index": "node --experimental-modules --unhandled-rejections=strict index.mjs"
+    "index": "node --experimental-modules --unhandled-rejections=strict index.mjs",
+    "start": "./reach compile && REACH_CONNECTOR_MODE=ALGO DEBUG=1 ./reach run"
   }
 }
