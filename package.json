@@ -10,6 +10,8 @@
     "index": "node --experimental-modules --unhandled-rejections=strict index.mjs",
     "compile": "./reach compile",
     "start": "REACH_CONNECTOR_MODE=ALGO DEBUG=1 ./reach run",
-    "start-eth": "REACH_CONNECTOR_MODE=ETH DEBUG=1 ./reach run"
+    "start-eth": "REACH_CONNECTOR_MODE=ETH DEBUG=1 ./reach run",
+    "react": "REACH_CONNECTOR_MODE=ALGO DEBUG=1 ./reach react",
+    "react-eth": "REACH_CONNECTOR_MODE=ETH DEBUG=1 ./reach react"
   }
 }

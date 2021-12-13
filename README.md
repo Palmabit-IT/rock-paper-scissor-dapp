@@ -23,6 +23,10 @@ npm start
 npm run start-eth
 ```
 
+### React
+
+- Creare account MetaMask e selezionare la net in locale (es: Localhost 8545)
+- `npm run react-eth` (or `npm run` per Algorand, al momento non funzionante)
 
 ## Background
 
